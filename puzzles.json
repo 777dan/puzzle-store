@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Alpen",
+        "img": "./images/puzzles/alpen.jpg",
+        "price": 10.50
+    },
+    {
+        "name": "Desert",
+        "img": "./images/puzzles/desert.jpg",
+        "price": 12.35
+    },
+    {
+        "name": "Field",
+        "img": "./images/puzzles/field.jpg",
+        "price": 9.99
+    },
+    {
+        "name": "Forest",
+        "img": "./images/puzzles/forest.jpg",
+        "price": 6.99
+    },
+    {
+        "name": "Mountain river",
+        "img": "./images/puzzles/mountain-river.jpg",
+        "price": 7.99
+    },
+    {
+        "name": "New York",
+        "img": "./images/puzzles/new-york.jpg",
+        "price": 15.45
+    },
+    {
+        "name": "San Francisco",
+        "img": "./images/puzzles/san-francisco.jpg",
+        "price": 13.99
+    },
+    {
+        "name": "Tokio",
+        "img": "./images/puzzles/tokio.jpg",
+        "price": 9.99
+    },
+    {
+        "name": "Winter",
+        "img": "./images/puzzles/winter.jpg",
+        "price": 12.65
+    },
+    {
+        "name": "Osaka castle",
+        "img": "./images/puzzles/osaka-castle.jpg",
+        "price": 11.10
+    }
+]
