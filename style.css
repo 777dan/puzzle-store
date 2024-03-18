@@ -73,6 +73,10 @@ form#form_chatbox input {
 }
 
 .carousel-caption {
-  z-index: 9999;
+  z-index: 9998;
   bottom: 45%; 
+}
+
+.modal {
+  z-index: 9999;
 }
