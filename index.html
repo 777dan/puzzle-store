@@ -61,7 +61,7 @@
                             <a class="nav-link btn btn-warning" href="#">Buy puzzles</a>
                         </li>
                     </ul>
-                    <button class="btn btn-success" type="openCart" data-bs-toggle="modal"
+                    <button id="open-cart" class="btn btn-success" data-bs-toggle="modal"
                         data-bs-target="#cart">Cart</button>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -79,8 +79,8 @@
                         <h4 class="modal-title">Cart</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
-                    <div class="modal-body">
-                        <div class="d-flex align-items-center gap-5">
+                    <div class="modal-body" id="puzz-list">
+                        <!-- <div class="d-flex align-items-center gap-5">
                             <img src="./images/puzzles/alpen.jpg" width="20%" alt="">
                             <span id="name">Alpen</span>
                             <span id="price">3443</span>
@@ -88,7 +88,7 @@
                                 <button class="btn btn-success">&#43;</button>
                                 <button class="btn btn-danger">&#8722;</button>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
