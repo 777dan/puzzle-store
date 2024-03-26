@@ -41,7 +41,7 @@
 
     <div id="contents">
         <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav id="navbar-section" class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Puzzworld</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -52,24 +52,36 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#navbar-section">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About us</a>
+                            <a class="nav-link" href="#about-us-section">About us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-warning" href="#">Buy puzzles</a>
+                            <a class="nav-link btn btn-warning" id="buy-button-nav" href="#puzzles-section">Buy
+                                puzzles</a>
                         </li>
                     </ul>
-                    <button id="open-cart" class="btn btn-success" data-bs-toggle="modal"
-                        data-bs-target="#cart">Cart</button>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    <button id="open-cart" class="btn btn-success mx-3" data-bs-toggle="modal" data-bs-target="#cart">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-cart4" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0" />
+                        </svg>
+                    </button>
+                    <button class="btn btn-outline-success" type="button" data-bs-toggle="modal"
+                        data-bs-target="#login-modal">Log in</button>
                 </div>
             </div>
         </nav>
+
+        <!-- top-message -->
+        <div id="top-message" class="w-100 d-flex flex-column justify-content-between">
+            <span id="message-text" class="mx-3 mt-4"></span>
+            <div class="progress">
+                <div id="progress-bar" class="progress-bar bg-warning"></div>
+            </div>
+        </div>
 
         <!-- Cart -->
         <div class="modal" id="cart">
@@ -132,15 +144,8 @@
             </button>
         </div>
 
-        <!-- <svg width="300px" height="300px" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink">
-            <image xlink:href="./images/puzzles/alpen.jpg"
-                x="0" y="0" height="1000" width="1000" />
-            <image xlink:href="./images/add-do-cart.png" x="0" y="0" height="1000" width="1000" />
-        </svg> -->
-
         <!-- abous-us -->
-        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+        <div id="about-us-section" class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
             <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
                 <h2 class="display-4 fw-bold lh-1">Welcome to Puzzworld - Your Gateway to Infinite Adventures!</h1>
                     <p class="lead">Puzzworld is more than just a store; it's a haven for puzzle enthusiasts, a
@@ -149,14 +154,14 @@
                         passionate individuals driven by a shared love for puzzles and games, Puzzworld is dedicated to
                         providing an unparalleled experience to puzzle lovers worldwide.</p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-                        <button type="button" class="btn btn-warning btn-lg px-4 me-md-2 fw-bold">Primary</button>
-                        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+                        <a href="#puzzles-section" class="btn btn-warning btn-lg px-4 me-md-2 fw-bold">Buy puzzles</a>
                     </div>
             </div>
-            <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-                <video width="320" height="240" controls>
-                    <source src="movie.mp4" type="video/mp4">
-                </video>
+            <div class="col-lg-3 offset-lg-1 p-0 overflow-hidden shadow-lg">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/3VZSZXwjRZs?si=dEl0zMmnhMXnYPju"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
 
@@ -251,24 +256,32 @@
                                 </svg></a></li>
                     </ul>
                 </div>
+                <button onclick="topFunction()" id="scrollToTopBtn" title="Go to top">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-up" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5" />
+                    </svg>
+                </button>
+
             </footer>
         </div>
 
         <div id="chatbot">
             <form action="" id="form_chatbox">
                 <div id="answers"></div>
-                <input type="text" name="" id="question" />
-                <input type="button" value="OK" id="ok" />
+                <input class="form-control" type="text" name="" id="question" />
+                <input class="btn btn-warning" type="button" value="OK" id="ok" />
             </form>
         </div>
 
         <!-- Modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#login-modal">
             Open modal
         </button>
 
         <!-- The Modal -->
-        <div class="modal" id="myModal">
+        <div class="modal" id="login-modal">
             <div class="modal-dialog">
                 <div class="modal-content">
 

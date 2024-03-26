@@ -62,6 +62,7 @@ $(document).ready(function () {
       cartData[itemId] = [puzzlesArr[itemId].name, puzzlesArr[itemId].price, 1, puzzlesArr[itemId].img];
     }
     setCartData(cartData);
+    showMessage("The product has been added to the cart");
   }
 
   function delFromCart(delButt) {
@@ -76,6 +77,18 @@ $(document).ready(function () {
     }
 
     setCartData(cartData);
+    showMessage("The product has been removed from the cart")
+  }
+
+  function showMessage(message) {
+    $("#message-text").html(message);
+    $("#top-message").animate({ opacity: 1 });
+    $("#progress-bar").animate({ width: "0%" }, 1500);
+    setTimeout(() => {
+      $("#top-message").animate({ opacity: 0 });
+      $("#progress-bar").css("width", "100%");
+      // $("#progress-bar").css("z-index", "-9999");
+    }, 2000);
   }
 
   function openCart() {
@@ -100,12 +113,25 @@ $(document).ready(function () {
       }
       $("#total-amount").html(totalAmount.toFixed(2));
     } else {
-      $("#puzz-list").append("<p>The cart is empty</p>");
+      $("#total-amount").html(0);
+      $("#puzz-list").html("<p>The cart is empty</p>");
     }
   }
 
   function clearCart() {
     localStorage.removeItem("cart");
-    cartCont.innerHTML = "The cart was emtied";
   }
+
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 20) {
+      $('#scrollToTopBtn').css('display', 'block');
+    } else {
+      $('#scrollToTopBtn').css('display', 'none');
+    }
+  });
+
+  $('#scrollToTopBtn').click(function() {
+    $('body,html').scrollTop(0);
+  });
+
 });

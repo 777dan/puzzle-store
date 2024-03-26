@@ -1,8 +1,8 @@
 const phrases = {
     "Hello": "How can I help you?",
     "Bye": "Bye!",
-    "Do you like the weather today?": "Yes, sure! The weather is beautiful today!",
-    "I want to know more detailed information": "For more details please call 123456789",
+    "I want to buy puzzles": "Great! You can find a large assortment of puzzles on our website",
+    "I want to know more detailed information": "For more details please call +380249294389",
     "Connect me with the manager": "Our manager will call you back soon!"
 }
 

@@ -6,6 +6,10 @@
   transform: translate(-50%, -50%);
 }
 
+#buy-button-nav {
+  display: inline-block;
+}
+
 .carousel-item:after {
   content:"";
   position:absolute;
@@ -42,9 +46,12 @@
   left: calc(100% - 20px);
   width: 200px;
   height: 300px;
-  background-color: rgb(40, 97, 202);
+  background-color: rgb(235, 240, 205);
   overflow-y: auto;
   padding: 5px 25px;
+  z-index: 9999;
+  border-radius: 5px;
+  cursor: pointer;
   transition: all 0.5s;
 }
 form#form_chatbox {
@@ -63,8 +70,38 @@ form#form_chatbox input {
   left: calc(100% - 220px) !important;
 }
 
+.card-img {
+  cursor: pointer;
+}
+
+#top-message {
+  background-color: #f5f8e9;
+  height: 100px;
+  position: fixed;
+  z-index: 9997;
+  top: 55px;
+  opacity: 0;
+}
+
+#progress-bar {
+  width: 100%;
+}
+
+.progress {
+  border-radius: 0;
+}
+
 .human_answ{
-  background-color: #a0d2fa;
+  background-color: #fad7a0;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  width: 120px;
+  height: auto;
+}
+
+.bot_answ {
+  background-color: #faf1a0;
   padding: 5px;
   margin: 5px;
   border-radius: 5px;
@@ -78,5 +115,27 @@ form#form_chatbox input {
 }
 
 .modal {
+  top: 160px;
   z-index: 9999;
+}
+
+#scrollToTopBtn {
+  display: none;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 20px;
+  left: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#scrollToTopBtn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
 }
