@@ -14,12 +14,25 @@ document.onreadystatechange = function () {
 
 
 $(document).ready(function () {
+  // $(document).on('readystatechange', () => {
+  //   let state = document.readyState;
+  //   if (state == "interactive") {
+  //     $("#contents").hide();
+  //     $("#load").show();
+  //   } else if (state == "complete") {
+  //     setTimeout(function () {
+  //       $("#load").hide();
+  //       $("#contents").show();
+  //     }, 2000);
+  //   }
+  // });
+
   let puzzlesArr = {};
   $.getJSON("puzzles.json", function (puzzArr) {
     puzzlesArr = puzzArr;
     for (let i = 0; i < puzzArr.length; i++) {
       $("#puzzles-section").append(`
-      <div class='col-3 my-3'>
+      <div class='cards col-3 my-3 py-3 border shadow-sm rounded-3 slideanim'>
         <div class="card-header card-img" data-id="${i}">
             <img class="col-12" src='${puzzArr[i].img}' alt=''>
         </div>
@@ -34,6 +47,13 @@ $(document).ready(function () {
   function setCartData(cartData) {
     localStorage.setItem("cart", JSON.stringify(cartData));
   }
+
+  // $(document).on("click", "#turn-on-sounds", function () {
+  //   let audio = new Audio('./sounds/forest.mp3');
+  //   audio.play();
+  //   $(this).hide();
+  // });
+
   $("#open-cart").click(function () {
     openCart();
   });
@@ -130,8 +150,36 @@ $(document).ready(function () {
     }
   });
 
-  $('#scrollToTopBtn').click(function() {
+  $('#scrollToTopBtn').click(function () {
     $('body,html').scrollTop(0);
   });
+
+  $(document).on("click", "#submit-log-in", function () {
+    let login = $('#login').val();
+    let pwd = $('#pwd').val();
+    document.cookie = `user=${login}; pwd=${pwd}`;
+  });
+
+  function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  setTimeout(() => {
+    if (getCookie('user').length !== 0) {
+      showMessage(`Hello ${getCookie('user')}`)
+    }
+  }, 3000)
 
 });

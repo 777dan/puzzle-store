@@ -37,11 +37,16 @@
             <animateTransform attributeName="transform" begin="0.8s" additive="sum" type="scale" values="1;1.1;1"
                 dur="1s" repeatCount="indefinite" />
         </path>
+        <text x="100" y="50" fill="green" font-size="0" text-anchor="middle">
+            <animate attributeName="font-size" attributeType="XML" begin="0s" dur="6s" fill="freeze" from="0" to="64">
+            </animate>
+            Puzzworld
+        </text>
     </svg>
 
     <div id="contents">
         <!-- navbar -->
-        <nav id="navbar-section" class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav id="navbar-section" class="navbar navbar-expand-lg navbar-light sticky-top shadow-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Puzzworld</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -79,7 +84,7 @@
         <div id="top-message" class="w-100 d-flex flex-column justify-content-between">
             <span id="message-text" class="mx-3 mt-4"></span>
             <div class="progress">
-                <div id="progress-bar" class="progress-bar bg-warning"></div>
+                <div id="progress-bar" class="progress-bar bg-success"></div>
             </div>
         </div>
 
@@ -145,23 +150,28 @@
         </div>
 
         <!-- abous-us -->
-        <div id="about-us-section" class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-                <h2 class="display-4 fw-bold lh-1">Welcome to Puzzworld - Your Gateway to Infinite Adventures!</h1>
-                    <p class="lead">Puzzworld is more than just a store; it's a haven for puzzle enthusiasts, a
-                        sanctuary
-                        for the curious, and a hub for those seeking moments of joy and connection. Founded by a team of
-                        passionate individuals driven by a shared love for puzzles and games, Puzzworld is dedicated to
-                        providing an unparalleled experience to puzzle lovers worldwide.</p>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-                        <a href="#puzzles-section" class="btn btn-warning btn-lg px-4 me-md-2 fw-bold">Buy puzzles</a>
-                    </div>
-            </div>
-            <div class="col-lg-3 offset-lg-1 p-0 overflow-hidden shadow-lg">
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/3VZSZXwjRZs?si=dEl0zMmnhMXnYPju"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="container p-4 pb-3 mb-3 pt-lg-5 slideanim" id="about-us-section">
+            <div class="row pt-lg-5 align-items-center rounded-3 border shadow-lg" id="about-us-content">
+                <div class="col-6 p-3 p-lg-5 pt-lg-3">
+                    <h2 class="display-4 fw-bold lh-1">Welcome to Puzzworld - Your Gateway to Infinite Adventures!</h1>
+                        <p class="lead">Puzzworld is more than just a store; it's a haven for puzzle enthusiasts, a
+                            sanctuary
+                            for the curious, and a hub for those seeking moments of joy and connection. Founded by a
+                            team of
+                            passionate individuals driven by a shared love for puzzles and games, Puzzworld is dedicated
+                            to
+                            providing an unparalleled experience to puzzle lovers worldwide.</p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                            <a href="#puzzles-section" class="btn btn-warning btn-lg px-4 me-md-2 fw-bold">Buy
+                                puzzles</a>
+                        </div>
+                </div>
+                <div class="col-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+                    <iframe width="450" height="220" src="https://www.youtube.com/embed/3VZSZXwjRZs"
+                        title="15 Strategies for Building Large Jigsaw Puzzles" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
 
@@ -193,57 +203,44 @@
         </div>
 
         <!-- footer -->
-        <div class="container">
-            <footer class="py-5">
+        <div class="container-fluid mt-5 shadow-lg" id="footer">
+            <footer class="p-5">
                 <div class="row">
-                    <div class="col-2">
-                        <h5>Section</h5>
+                    <div class="col-3">
+                        <h5>Links</h5>
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                            <li class="nav-item mb-2"><a href="#navbar-section" class="nav-link p-0 text-muted">Home</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#about-us-section" class="nav-link p-0 text-muted">About
+                                    us</a></li>
+                            <li class="nav-item mb-2"><a href="#puzzles-section" class="nav-link p-0 text-muted">Buy
+                                    puzzles</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-2">
-                        <h5>Section</h5>
+                    <div class="col-3">
+                        <h5>Cotacts</h5>
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-2">
-                        <h5>Section</h5>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                            <li class="nav-item mb-2">puzzworld.company@gmail.com</li>
+                            <li class="nav-item mb-2">+380294938492</li>
                         </ul>
                     </div>
 
                     <div class="col-4 offset-1">
                         <form>
-                            <h5>Subscribe to our newsletter</h5>
-                            <p>Monthly digest of whats new and exciting from us.</p>
+                            <h5>Subscribe</h5>
+                            <p>Subscribe to our newsletter so you can see our new products.</p>
                             <div class="d-flex w-100 gap-2">
                                 <label for="newsletter1" class="visually-hidden">Email address</label>
                                 <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                                <button class="btn btn-primary" type="button">Subscribe</button>
+                                <button class="btn btn-warning" type="button">Subscribe</button>
                             </div>
                         </form>
                     </div>
                 </div>
 
                 <div class="d-flex justify-content-between py-4 my-4 border-top">
-                    <p>© 2021 Company, Inc. All rights reserved.</p>
+                    <p>© 2024 Puzzworld. All rights reserved.</p>
                     <ul class="list-unstyled d-flex">
                         <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
                                     <use xlink:href="#twitter"></use>
@@ -270,50 +267,35 @@
         <div id="chatbot">
             <form action="" id="form_chatbox">
                 <div id="answers"></div>
+                <div id="turn-on-sounds">Turn on the sounds of the forest</div>
                 <input class="form-control" type="text" name="" id="question" />
                 <input class="btn btn-warning" type="button" value="OK" id="ok" />
             </form>
         </div>
 
-        <!-- Modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#login-modal">
-            Open modal
-        </button>
-
-        <!-- The Modal -->
+        <!-- Log in -->
         <div class="modal" id="login-modal">
             <div class="modal-dialog">
                 <div class="modal-content">
-
-                    <!-- Modal Header -->
                     <div class="modal-header">
-                        <h4 class="modal-title">Sign up</h4>
+                        <h4 class="modal-title">Log in</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
-
-                    <!-- Modal body -->
                     <div class="modal-body">
-                        <form action="/action_page.php">
+                        <form action="">
                             <div class="mb-3 mt-3">
-                                <label for="email" class="form-label">Email:</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email"
-                                    name="email">
+                                <label for="login" class="form-label">Login:</label>
+                                <input type="text" class="form-control" id="login" placeholder="Enter login"
+                                    name="login">
                             </div>
                             <div class="mb-3">
                                 <label for="pwd" class="form-label">Password:</label>
                                 <input type="password" class="form-control" id="pwd" placeholder="Enter password"
                                     name="pswd">
                             </div>
-                            <div class="form-check mb-3">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" name="remember"> Remember me
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button id="submit-log-in" class="btn btn-warning">Submit</button>
                         </form>
                     </div>
-
-                    <!-- Modal footer -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                     </div>
@@ -325,6 +307,7 @@
     <script src="./script.js"></script>
     <script src="./bot.js"></script>
     <script src="./cart.js"></script>
+    <script src="./scroll.js"></script>
 </body>
 
 </html>

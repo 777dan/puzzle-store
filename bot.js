@@ -1,12 +1,12 @@
 const phrases = {
-    "Hello": "How can I help you?",
+    "Hello": "Hi! How can I help you?",
     "Bye": "Bye!",
     "I want to buy puzzles": "Great! You can find a large assortment of puzzles on our website",
     "I want to know more detailed information": "For more details please call +380249294389",
     "Connect me with the manager": "Our manager will call you back soon!"
 }
 
-const hello = "Hello!";
+// const hello = "Hello!";
 
 $("h1").css("color", "blue");
 
@@ -14,13 +14,22 @@ $("#chatbot").click(function () {
     $(this).toggleClass("showChat");
 });
 
-$("#answers").append(`<div class="bot_answ">${hello}</div>`);
+// $("#answers").append(`<div class="bot_answ">${hello}</div>`);
 
 $("#answers").click(function () {
     return false;
 });
 
 $("#question").click(function () {
+    return false;
+});
+
+$("#turn-on-sounds").click(function () {
+    let audio = new Audio('./sounds/forest.mp3');
+    audio.play();
+    $(this).hide();
+    $("#answers").append(`<div class="human_answ">Turn on the sounds of the forest</div>`);
+    $("#answers").append(`<div class="bot_answ">Okay</div>`);
     return false;
 });
 
