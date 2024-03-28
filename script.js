@@ -1,38 +1,38 @@
-document.onreadystatechange = function () {
+// document.onreadystatechange = function () {
+//   let state = document.readyState;
+//   if (state == "interactive") {
+//     document.getElementById("contents").style.display = "none";
+//     // document.getElementById("contents").style.visibility = "hidden";
+//     document.getElementById("load").style.visibility = "visible";
+//   } else if (state == "complete") {
+//     setTimeout(function () {
+//       document.getElementById("load").style.visibility = "hidden";
+//       document.getElementById("contents").style.display = "block";
+//     }, 2000);
+//   }
+// };
+
+$(document).on('readystatechange', () => {
   let state = document.readyState;
   if (state == "interactive") {
-    document.getElementById("contents").style.display = "none";
-    // document.getElementById("contents").style.visibility = "hidden";
-    document.getElementById("load").style.visibility = "visible";
+    $("#contents").hide();
+    $("#load").show();
   } else if (state == "complete") {
     setTimeout(function () {
-      document.getElementById("load").style.visibility = "hidden";
-      document.getElementById("contents").style.display = "block";
+      $("#load").hide();
+      $("#contents").show();
     }, 2000);
   }
-};
+});
 
 
 $(document).ready(function () {
-  // $(document).on('readystatechange', () => {
-  //   let state = document.readyState;
-  //   if (state == "interactive") {
-  //     $("#contents").hide();
-  //     $("#load").show();
-  //   } else if (state == "complete") {
-  //     setTimeout(function () {
-  //       $("#load").hide();
-  //       $("#contents").show();
-  //     }, 2000);
-  //   }
-  // });
-
   let puzzlesArr = {};
   $.getJSON("puzzles.json", function (puzzArr) {
     puzzlesArr = puzzArr;
     for (let i = 0; i < puzzArr.length; i++) {
       $("#puzzles-section").append(`
-      <div class='cards col-3 my-3 py-3 border shadow-sm rounded-3 slideanim'>
+      <div class='cards col-6 col-sm-4 col-md-3 my-3 py-3 border shadow-sm rounded-3 slideanim'>
         <div class="card-header card-img" data-id="${i}">
             <img class="col-12" src='${puzzArr[i].img}' alt=''>
         </div>
@@ -47,12 +47,6 @@ $(document).ready(function () {
   function setCartData(cartData) {
     localStorage.setItem("cart", JSON.stringify(cartData));
   }
-
-  // $(document).on("click", "#turn-on-sounds", function () {
-  //   let audio = new Audio('./sounds/forest.mp3');
-  //   audio.play();
-  //   $(this).hide();
-  // });
 
   $("#open-cart").click(function () {
     openCart();
