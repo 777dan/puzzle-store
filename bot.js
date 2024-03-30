@@ -3,7 +3,11 @@ const phrases = {
     "Bye": "Bye!",
     "I want to buy puzzles": "Great! You can find a large assortment of puzzles on our website",
     "I want to know more detailed information": "For more details please call +380249294389",
-    "Connect me with the manager": "Our manager will call you back soon!"
+    "Connect me with the manager": "Our manager will call you back soon!",
+    "What puzzles would you recommend?": "If you are an expert, then choose large puzzles",
+    "Thanks": "Happy to help",
+    "Do you have children's puzzles?": "We can make to order",
+    "Do you have sets of 2000 puzzles?": "Yes, you can find them on our website"
 }
 
 // const hello = "Hello!";
@@ -24,10 +28,22 @@ $("#question").click(function () {
     return false;
 });
 
+let audio = new Audio('./sounds/forest.mp3');
+
 $("#turn-on-sounds").click(function () {
-    let audio = new Audio('./sounds/forest.mp3');
     audio.play();
     $(this).hide();
+    $("#turn-off-sounds").show();
+    $("#answers").append(`<div class="human_answ">Turn off the sounds of the forest</div>`);
+    $("#answers").append(`<div class="bot_answ">Okay</div>`);
+    return false;
+});
+
+$("#turn-off-sounds").click(function () {
+    audio.pause();
+    audio.currentTime = 0;
+    $(this).hide();
+    $("#turn-on-sounds").show();
     $("#answers").append(`<div class="human_answ">Turn on the sounds of the forest</div>`);
     $("#answers").append(`<div class="bot_answ">Okay</div>`);
     return false;

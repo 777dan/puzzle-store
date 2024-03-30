@@ -122,7 +122,8 @@ form#form_chatbox input {
   background-color: #e9d9c0;
 }
 
-#turn-on-sounds {
+#turn-on-sounds,
+#turn-off-sounds {
   background-color: #e8d69c;
   border: 3px solid #df921d;
 }
@@ -136,8 +137,13 @@ form#form_chatbox input {
   cursor: auto;
 }
 
+#turn-off-sounds {
+  display: none;
+}
+
 .human_answ,
 #turn-on-sounds,
+#turn-off-sounds,
 .bot_answ {
   padding: 5px;
   margin: 5px;
